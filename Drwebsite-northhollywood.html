@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Christin Deronian</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .nav-link {
+            font-size: 1.1rem;
+        }
+
+        .appointment-btn {
+            font-size: 1.1rem;
+            /* text-decoration: none; */
+        }
+    </style>
+    </body>
+
+    <script>function toggleNav() {
+            var navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+
+    </script>
+</head>
+<style>
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+
+    .top-bar {
+        background-color: #40E0D0;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+    }
+
+    .address,
+    .phone {
+        margin-right: auto;
+    }
+
+    .social-icons a {
+        color: white;
+        text-decoration: none;
+        margin-left: 10px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: white;
+    }
+
+    .logo {
+        color: #40E0D0;
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .nav-links {
+        list-style-type: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .nav-links li {
+        margin: 0 15px;
+        position: relative;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #333;
+        font-size: 14px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        padding: 5px 0;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #40E0D0;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease;
+    }
+
+
+    .nav-links a:hover {
+        color: #40E0D0;
+    }
+
+    .nav-links a:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+
+    .appointment-btn {
+        background-color: #40E0D0;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+    }
+
+    .appointment-btn:hover,
+.appointment-btn:focus {
+    text-decoration: none; /* Remove text decoration on hover and focus */
+    color: white; /* Ensure the text color stays white */
+   
+}
+    .appointment-btn:hover {
+        background-color: #36b9a9;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* text-decoration: none; */
+
+    }
+
+
+
+    .hero {
+        background-image: url('https://www.vanillasmiles.dental/wp-content/uploads/2024/03/anixty.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        padding-left: 50px;
+        position: relative;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+    }
+
+    .highlight {
+        font-weight: bold;
+        color: #40E0D0;
+    }
+
+    .hero-content p {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .medical-services {
+        text-align: center;
+        padding: 50px 20px;
+    }
+
+    h2 {
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    .highlight {
+        color: #40E0D0;
+    }
+
+    .subtitle {
+        color: #777;
+        max-width: 600px;
+        margin: 0 auto 40px;
+    }
+
+    .services-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .service-item {
+        flex-basis: 30%;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .icon-circle {
+        width: 100px;
+        height: 100px;
+        background-color: #f0f0f0;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto 20px;
+    }
+
+    .icon-circle img {
+        width: 100%;
+        height: auto;
+    }
+
+    h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .service-item p {
+        color: #777;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .dental-services {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    .service-card {
+        flex-basis: 32%;
+        padding: 30px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .emergency {
+        background-color: #40E0D0;
+    }
+
+    .branches {
+        background-color: #6A5ACD;
+    }
+
+    .payments {
+        background-color: #9370DB;
+    }
+
+    h3 {
+        font-size: 14px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .service-link {
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        text-transform: uppercase;
+        align-self: flex-start;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .dental-services {
+            flex-direction: column;
+        }
+
+        .service-card {
+            margin-bottom: 20px;
+        }
+    }
+
+    .custom-background {
+        background-color: #40E0D0;
+        color: white;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .custom-stats {
+        display: flex;
+        justify-content: space-around;
+        margin-bottom: 30px;
+    }
+
+    .custom-stat-item {
+        text-align: left;
+    }
+
+    .custom-stat-number {
+        font-size: 36px;
+        font-weight: bold;
+    }
+
+    .custom-stat-label {
+        font-size: 14px;
+    }
+
+    .custom-about-us {
+        background-color: white;
+        color: #333;
+        padding: 40px;
+        text-align: left;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .custom-h1 {
+        color: #40E0D0;
+    }
+
+    .site-footer {
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+    }
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .footer-logo img {
+        width: 120px;
+        height: auto;
+    }
+
+    .footer-links ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .footer-links ul li {
+        margin-bottom: 10px;
+    }
+
+    .footer-links ul li a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .footer-links ul li a:hover {
+        text-decoration: underline;
+    }
+
+    .footer-contact p {
+        margin-bottom: 10px;
+    }
+
+    .footer-bottom {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .footer-bottom p {
+        font-size: 14px;
+    }
+
+    .gallery {
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #f9f9f9;
+    }
+
+    .gallery h2 {
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .gallery .gallery-images {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .gallery .gallery-image {
+        margin: 10px;
+        width: calc(33.333% - 20px);
+    }
+
+    .gallery .gallery-image img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .top-bar {
+        background-color: #40E0D0;
+        color: white;
+        padding: 10px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 14px;
+        transition: background-color 0.3s ease;
+    }
+
+    .top-bar:hover {
+        background-color: #36b9a9;
+    }
+
+    .contact-info {
+        display: flex;
+        align-items: center;
+    }
+
+    .address,
+    .phone {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        transition: transform 0.3s ease;
+    }
+
+    .address:hover,
+    .phone:hover {
+        transform: translateY(-2px);
+    }
+
+    .address i,
+    .phone i {
+        margin-right: 8px;
+        font-size: 16px;
+    }
+
+    .social-icons {
+        display: flex;
+    }
+
+    .social-icons a {
+        color: white;
+        margin-left: 15px;
+        transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+        color: #f0f0f0;
+        transform: translateY(-2px);
+    }
+    .phone-link {
+        color: white;
+        text-decoration: none;
+    }
+    .phone-link:hover,
+.phone-link:focus {
+    text-decoration: none; /* Remove text decoration on hover and focus */
+    color: white; /* Ensure the text color stays white */
+}
+.address-link:hover, .address-link:focus{
+    text-decoration: none; /* Remove text decoration on hover and focus */
+    color: white; /* Ensure the text color stays white */
+}
+
+    .address-link {
+        color: white;
+        text-decoration: none;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .top-bar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .contact-info {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .address,
+        .phone {
+            margin-bottom: 5px;
+        }
+
+        .social-icons {
+            align-self: flex-start;
+        }
+    }
+
+ 
+
+    /* Existing styles */
+
+    /* Hover effects */
+    .address:hover,
+    .phone:hover,
+    .email:hover {
+        color: #f0f0f0;
+        transform: translateY(-2px);
+        text-decoration: none;
+
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+        .dental-services {
+            flex-direction: column;
+        }
+
+        .service-card {
+            margin-bottom: 20px;
+        }
+
+        .top-bar {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .contact-info {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .address,
+        .phone,
+        .email {
+            margin-bottom: 5px;
+            
+        }
+
+        .social-icons {
+            align-self: flex-start;
+        }
+
+        /* nav {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .nav-links {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .nav-links li {
+            margin: 10px 0;
+        } */
+    }
+
+
+    #about-us {
+        background-color: #40E0D0;
+        /* Replace with your desired color code */
+        padding: 20px;
+        /* Optional: Add padding for spacing */
+        color: #ffffff;
+        /* Optional: Adjust text color for contrast */
+    }
+
+    .service-item img {
+        width: 100px;
+        /* Set image width */
+        height: 100px;
+        /* Set image height */
+        border-radius: 50%;
+        /* Make the image round */
+        overflow: hidden;
+        /* Ensure content overflow is hidden within the circle */
+    }
+
+     .nav-links {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+   /* .nav-links li {
+        padding: 0 10px;
+    } */
+
+
+ 
+</style>
+
+
+
+
+<body>
+    <header>
+
+        <!-- <nav>
+            <div class="logo">North Hollywood Dentist</div>
+            <ul class="nav-links">
+                <li><a href="#about-us">ABOUT US</a></li>
+                <li><a href="#dental-services">SERVICES</a></li>
+                <li><a href="#dental-treatments">TREATMENTS</a></li>
+                <li><a href="https://patient.rocks/PatientForm/loginpatient/Njk4ZjM3NmEtNjNkZC00ZTFhLTg4ZTctMTMwNzQ0/MQ==/%7B%7BclinicNum%7D%7D/%7B%7Bamount%7D%7D">NEW PATIENT FORMS</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#footer">CONTACT</a></li>
+            </ul>
+			<a href="https://patient.rocks/Dashboard/PatientDashboard/Njk4ZjM3NmEtNjNkZC00ZTFhLTg4ZTctMTMwNzQ0" class="appointment-btn">MAKE AN APPOINTMENT</a>
+           
+        </nav> -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <div class="logo" href="#">North Hollywood Dentist</div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0 nav-links">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about-us">ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#dental-services">SERVICES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#dental-treatments">TREATMENTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                                href="https://patient.rocks/PatientForm/loginpatient/Njk4ZjM3NmEtNjNkZC00ZTFhLTg4ZTctMTMwNzQ0/MQ==/%7B%7BclinicNum%7D%7D/%7B%7Bamount%7D%7D">NEW
+                                PATIENT FORMS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#gallery">GALLERY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#footer">CONTACT</a>
+                        </li>
+                    </ul>
+                    <a href="https://patient.rocks/Dashboard/PatientDashboard/Njk4ZjM3NmEtNjNkZC00ZTFhLTg4ZTctMTMwNzQ0"
+                        class="appointment-btn">MAKE AN APPOINTMENT</a>
+                </div>
+            </div>
+        </nav>
+        <div class="top-bar">
+            <div class="address">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=123+Dental+St,+North+Hollywood,+CA+91601"
+                        target="_blank" class="address-link">
+                        123 Dental St, North Hollywood, CA 91601
+                    </a>
+                </span>
+            </div>
+            <div class="phone">
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel:+18187608201" class="phone-link">(818) 760-8201</a>
+            </div>
+
+        </div>
+        <div class="social-icons">
+            <!-- Your social icons here -->
+        </div>
+        </div>
+
+
+
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-dribbble"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        </div>
+    </header>
+    <main>
+        <div class="hero">
+            <div class="hero-content">
+                <h1>Dr. <span class="highlight">Christin Deronian</span></h1>
+                <p>Providing exceptional dental care for your family.</p>
+                <a href="https://patient.rocks/Dashboard/PatientDashboard/Njk4ZjM3NmEtNjNkZC00ZTFhLTg4ZTctMTMwNzQ0"
+                    class="appointment-btn">BOOK APPOINTMENT NOW!</a>
+
+            </div>
+        </div>
+
+        <section id="dental-services" class="dental-services">
+
+            <div class="service-card emergency">
+                <h3>EMERGENCY</h3>
+                <h2>Emergency Dental Care</h2>
+                <p>Get immediate care for dental emergencies. Our team is available 24/7 to assist you with any urgent
+                    dental needs, ensuring you receive prompt relief and treatment.</p>
+            </div>
+
+            <div class="service-card branches">
+                <h3>ORTHODONTICS</h3>
+                <h2>Braces and Aligners</h2>
+                <p>Straighten your teeth with traditional braces or Invisalign. Our orthodontic specialists personalize
+                    treatment plans to achieve optimal results, helping you achieve a straighter smile comfortably and
+                    effectively.</p>
+            </div>
+
+            <div class="service-card payments">
+                <h3>COSMETIC DENTISTRY</h3>
+                <h2>Smile Makeovers</h2>
+                <p>Enhance the appearance of your smile with whitening, veneers, and more. Our cosmetic dentistry
+                    services are tailored to enhance your natural beauty, providing comprehensive smile makeovers that
+                    leave you feeling confident and radiant.</p>
+            </div>
+
+
+        </section>
+
+
+
+        <section id="dental-treatments" class="medical-services">
+            <h2>Our <span class="highlight">Dental Treatments</span></h2>
+            <p class="subtitle">From routine cleanings to advanced treatments, we offer a full range of dental services
+                to meet your needs.</p>
+            <div class="services-container">
+
+                <div class="service-item">
+                    <div class="icon-circle">
+                        <img src="https://auburnfamilydentistry.com/wp-content/uploads/2023/11/shutterstock_1673668876.jpg"
+                            alt="Crowns">
+                    </div>
+                    <h3>Crowns</h3>
+                    <p>Protect damaged teeth with durable dental crowns.</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon-circle">
+                        <img src="https://media.istockphoto.com/id/941012812/photo/3d-render-of-jaw-with-dental-bridge.jpg?s=612x612&w=0&k=20&c=PHFOGEooI9RS5BJTNRPM8Bm2RsvqwyJU_WGy3na4F2M="
+                            alt="Bridges">
+                    </div>
+                    <h3>Bridges</h3>
+                    <p>Replace missing teeth with custom dental bridges.</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon-circle">
+                        <img src="https://www.vuedentalkyle.com/blog/wp-content/uploads/2020/06/ALL-ON-4-CLINIC_Dental-Implants-5107.jpg"
+                            alt="Teeth Whitening">
+                    </div>
+                    <h3>Teeth Whitening</h3>
+                    <p>Brighten your smile with professional teeth whitening services.</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon-circle">
+                        <img src="https://www.shutterstock.com/image-photo/whitening-concept-dental-care-implants-600nw-2300068471.jpg"
+                            alt="Veneers">
+                    </div>
+                    <h3>Veneers</h3>
+                    <p>Enhance your smile with custom porcelain veneers.</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon-circle">
+                        <img src="https://www.windycityfamilydental.com/wp-content/uploads/2021/08/blog-image1.png"
+                            alt="White Fillings">
+                    </div>
+                    <h3>White Fillings</h3>
+                    <p>Restore decayed teeth with natural-looking white fillings.</p>
+                </div>
+                <div class="service-item">
+                    <div class="icon-circle">
+                        <img src="https://www.dentistryofwestbend.com/wp-content/uploads/shutterstock_2125599860-1080x675.jpg"
+                            alt="Periodontic Health">
+                    </div>
+                    <h3>Periodontic Health</h3>
+                    <p>Maintain healthy gums with comprehensive periodontal care.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about-us" class="about-us">
+            <h2>About Us<span class="highlight"></span></h2>
+            <p>Welcome to North Hollywood Dentist, where we provide exceptional dental care for your entire family. Our
+                dedicated team of professionals is committed to ensuring your comfort and satisfaction. With a wide
+                range of services from preventive care to cosmetic dentistry, we strive to keep your smile healthy and
+                beautiful.</p>
+        </section>
+
+
+        <section id="gallery" class="gallery">
+            <h2>Gallery</h2>
+            <div class="gallery-images">
+                <div class="gallery-image">
+                    <img src="https://img.freepik.com/free-photo/male-professional-dentist-with-gloves-mask-discuss-what-treatment-will-look-like-patient-s-teeth_158595-7630.jpg"
+                        alt="Gallery Image 1">
+                </div>
+                <div class="gallery-image">
+                    <img src="https://s3.envato.com/files/417197348/st1%20(78).jpg" alt="Gallery Image 2">
+                </div>
+                <div class="gallery-image">
+                    <img src="https://thumbs.wbm.im/pw/small/5e7e368067ec2a14fdb1d6e21af0934f.jpg"
+                        alt="Gallery Image 3">
+                </div>
+                <div class="gallery-image">
+                    <img src="https://www.cadentalgroup.com/wp-content/uploads/2019/09/Three-common-myths-why-people-refuse-to-visit-the-dentist.jpg"
+                        alt="Gallery Image 4">
+                </div>
+                <div class="gallery-image">
+                    <img src="https://www.parkplacekids.com/wp-content/uploads/2019/05/first-dental-visit-1024x682.jpeg"
+                        alt="Gallery Image 5">
+                </div>
+                <div class="gallery-image">
+                    <img src="https://images.jdmagicbox.com/comp/haridwar/dc/9999p1334.1334.100316073227.a5g8dc/catalogue/dr-naman-aggrawal-dentist-haridwar-1MsZeEjGpktru2z.jpg"
+                        alt="Gallery Image 6">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="footer" class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="#about-us">ABOUT US</a></li>
+                    <li><a href="#dental-treatments">OUR TREATMENTS</a></li>
+
+                    <li><a href="#dental-services">SERVICES</a></li>
+                    <li><a
+                            href="https://patient.rocks/Dashboard/PatientDashboard/Njk4ZjM3NmEtNjNkZC00ZTFhLTg4ZTctMTMwNzQ0">BOOK
+                            APPOINTMENT</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <span><i class="fas fa-map-marker-alt"></i>
+                    <a href="https://www.google.com/maps/search/?api=1&query=123+Dental+St,+North+Hollywood,+CA+91601"
+                        target="_blank" class="address-link">
+                        123 Dental St, North Hollywood, CA 91601
+                    </a>
+                </span>
+
+                <p><i class="fas fa-phone"></i> <a href="tel:+18187608201" class="phone-link">(818) 760-8201</a></p>
+                <p><i class="fas fa-envelope"></i> mystomotologist@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+
+            <p>&copy; 2024 North Hollywood Dentist. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
